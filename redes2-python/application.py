@@ -1,15 +1,23 @@
+# coding=UTF-8
+
 import logger
 import server
 import client
 
-from datetime import datetime
-
-t = datetime.time(datetime.now())
-l = logger.LoggerHTML("banana.html")
-f = logger.LoggerFile("banana.txt")
+html = logger.LoggerHTML("testehtml.html")
+txt1 = logger.LoggerFile("teste1.txt")
+txt2 = logger.LoggerFile("teste2.txt")
 x = logger.Logger()
-l.log(t, "mensagem")
-f.log(t, "mensagem")
-x.log(t, "outra")
+
+c = client.Client()
+c.add_logger(html)
+c.add_logger(txt1)
+c.add_logger(txt2)
+c.add_logger(x)
+
+c.log("as mensagens vão para todos os logs")
+c.log("e como se todos fossem 'observers'")
+c.log("mas não são")
+
 
 

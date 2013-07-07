@@ -1,38 +1,40 @@
 # coding=UTF-8
 
+import client
 import logger
 import server
-import client
-
 import socket
 
+
 def interface_choose_mode():
-    print "Escolha o modo:"
-    print "1) Cliente."
-    print "2) Servidor."
-    print "q) Sair."
-    
-    mode = raw_input()
-    
-    if mode == "1":
-        print "Modo <Cliente> selecionado."
-        start_client_mode()
-    elif mode == "2":
-        print "Modo <Servidor> selecionado."
-        start_server_mode()
-    elif mode == "q":
-        print "Saindo."
-    else:
-        print "Modo inválido. Tente novamente."
-        interface_choose_mode()
+#     print "Escolha o modo:"
+#     print "1) Cliente."
+#     print "2) Servidor."
+#     print "q) Sair."
+#     
+#     mode = raw_input()
+#     
+#     if mode == "1":
+#         print "Modo <Cliente> selecionado."
+#         start_client_mode()
+#     elif mode == "2":
+#         print "Modo <Servidor> selecionado."
+#         start_server_mode()
+#     elif mode == "q":
+#         print "Saindo."
+#     else:
+#         print "Modo inválido. Tente novamente."
+#         interface_choose_mode()
+
+    start_server_mode()
 
 def start_client_mode():
-    print "IP"
-    UDP_IP = raw_input()
-    print "PORT"
-    UDP_port = raw_input()
+#     print "IP"
+#     UDP_IP = raw_input()
+#     print "PORT"
+#     UDP_port = raw_input()
     
-    connection_info = {'IP': UDP_IP, 'port': UDP_port}
+    connection_info = {'IP': "", 'port': ""}
     
     complete_with_default(connection_info)
     

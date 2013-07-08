@@ -66,6 +66,7 @@ def start_client_mode():
         
 def start_server_mode():
     server_IP = socket.gethostbyname(socket.gethostname())
+    print server_IP
     print "Digite a porta do server"
     server_port = raw_input()
     s_server = server.Server(server_IP, int(server_port))

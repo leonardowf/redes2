@@ -60,7 +60,7 @@ class Server:
             a_packet = packet.Packet("", 0)
             a_packet.unpack(data)
             
-            msg = "Pacote esperado: <%d> Pacote Recebido <%d>" % (self.expected_sequence_number, a_packet.sequence_number)
+            msg = "Pacote esperado: <%d> Pacote Recebido <%d> com data: <%s>" % (self.expected_sequence_number, a_packet.sequence_number, a_packet.data)
             self.notify_all(msg)
             
             if (a_packet.sequence_number == self.expected_sequence_number):

@@ -78,12 +78,14 @@ class Server:
                 elif (self.ja_tenho(a_packet)):
                     print "ja tenho o %d" % a_packet.sequence_number
                 else:
+                    print "fora de sequencia esperava %d recebi %d" % (self.expected_sequence_number, a_packet.sequence_number)
                     self.send_NACK(self.expected_sequence_number)
     
     def finalizes_transmission(self):
         self.expected_sequence_number = 0
         print self.data
         self.data = ""
+        self.list_of_packets = []
         print "finalizar"
                 
     def ja_tenho (self, a_packet):
@@ -91,10 +93,6 @@ class Server:
             if a_packet.sequence_number == p.sequence_number and a_packet.data == p.data:
                 return True
         return False
-        
-        
-        
-    
     
     def send_ACK(self, sequence_number):
         an_ACK = packet.Packet("", 0)

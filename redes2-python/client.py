@@ -9,7 +9,6 @@ import random
 class Client:
     loggers = []
     start_identifier = 0
-    received_start_ack = False
     limit_seq_num = 256
     packet_size = 1
     lost_percentage = 20
@@ -24,11 +23,6 @@ class Client:
         
         
         self.socket.bind((self.UDP_IP, 9002))
-        
-        
-
-
-        print self.start_identifier
     
     def add_logger(self, logger):
         self.loggers.append(logger)
@@ -52,74 +46,7 @@ class Client:
         
         response = self.receive_response()
         if response.is_ACK():
-            print "ok, pode comecar o a transmissão"
-    
-    def send(self, data):
-        
-        self.send_start_transmission_request()
-        
-    
-        
-        # quebra data em pequenos pacotes
-        bytes = len(data)
-        size_to_split = self.packet_size
-        self.list_of_packets = []
-        for i in range(0, bytes, size_to_split):
-            splitted_data = data[i:i+size_to_split]
-            print "wtf: " + str(self.seq_num)
-            a_packet = packet.Packet(splitted_data, self.seq_num)
-            self.list_of_packets.append(a_packet)
-            self.increments_sequence_number()
-            # temos uma lista com todos os packets
-        
-        a_packet = self.next_packet(False)
-        
-        while (a_packet):
-            received_ack = False
-            lose = False
-            while not received_ack:
-                if (self.should_i_lose_this_packet()):
-                    a_packet = self.next_packet(True)
-                    
-                    if (not a_packet):
-                        print "nao tem mais nada pra enviar"
-                    else:
-                        self.send_packet(a_packet)
-                        received_packet = self.receive_response()
-                        if (received_packet.is_ACK() and a_packet.sequence_number == received_packet.sequence_number):
-                            print "ACK do que deveria ter perdido" + str(received_packet.sequence_number)
-                            received_ack = True
-                            a_packet.acked = True
-    
-                        else:
-                            print "volta no loop"
-
-                else:
-                    if (self.should_i_duplicate_this_packet()):
-                        print "dupliquei"
-                        self.send_packet(a_packet)
-                        self.send_packet(a_packet)
-                        
-                        received_packet = self.receive_response()
-                        if (received_packet.is_ACK()):
-                            print "ACK do " + str(received_packet.sequence_number)
-                            received_ack = True
-                            a_packet.acked = True
-    
-                        else:
-                            print "reenviar"
-                    else:
-                        print "enviei normalmente"
-                        self.send_packet(a_packet)
-                        received_packet = self.receive_response()
-                        if (received_packet.is_ACK()):
-                            print "ACK do " + str(received_packet.sequence_number)
-                            received_ack = True
-                            a_packet.acked = True
-            
-            print "deveria vir pra ca depois do volta do loop"
-            a_packet = self.next_packet(False)
-    
+            print "ok, pode comecar o a transmissão"    
     
     def next_packet(self, lose):
         switch_lose = lose
@@ -137,7 +64,7 @@ class Client:
         return False
             
         
-    def send2(self, data):
+    def send(self, data):
         self.send_start_transmission_request()
         # quebra data em pequenos pacotes
         bytes = len(data)
@@ -163,7 +90,9 @@ class Client:
                 
                 if (p):
                     self.send_packet(p)
+                    print "enviei pacote %d" % p.sequence_number
                     r = self.receive_response()
+                    print "recebi a resposta: %d é ack? %s" % (r.sequence_number, r.is_ACK())
                     if (r.is_ACK()):
                         print "isso nao deveria acontecer"
                     else:
@@ -199,25 +128,11 @@ class Client:
         # fim do while
         self.send_end_of_transmission()
             
-            
-            
-        
-        
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     def send_end_of_transmission(self):
         p = packet.Packet("", -1)
         raw_end = p.pack()
-        self.send_packet(p) 
+        self.send_packet(p)
+        self.socket.close()
     
     def send_packet(self, a_packet):
         raw_packet = a_packet.pack()
@@ -248,13 +163,11 @@ class Client:
         data = None
         while True:
             data, addr = self.socket.recvfrom(1024) # buffer size is 1024 bytes
-            p = packet.Packet("", 0)
-            p.unpack(data)
-            return p;
-            
-    
-    def send_start_request(self, start_identifier):
-        print "not implemented yet"
+            if (data):
+                p = packet.Packet("", 0)
+                p.unpack(data)
+                return p;
+
     
     def increments_sequence_number(self):
         self.seq_num = self.seq_num + 1

@@ -7,26 +7,25 @@ import socket
 
 
 def interface_choose_mode():
-#     print "Escolha o modo:"
-#     print "1) Cliente."
-#     print "2) Servidor."
-#     print "q) Sair."
-#     
-#     mode = raw_input()
-#     
-#     if mode == "1":
-#         print "Modo <Cliente> selecionado."
-#         start_client_mode()
-#     elif mode == "2":
-#         print "Modo <Servidor> selecionado."
-#         start_server_mode()
-#     elif mode == "q":
-#         print "Saindo."
-#     else:
-#         print "Modo inválido. Tente novamente."
-#         interface_choose_mode()
+    print "Escolha o modo:"
+    print "1) Cliente."
+    print "2) Servidor."
+    print "q) Sair."
+     
+    mode = raw_input()
+     
+    if mode == "1":
+        print "Modo <Cliente> selecionado."
+        start_client_mode()
+    elif mode == "2":
+        print "Modo <Servidor> selecionado."
+        start_server_mode()
+    elif mode == "q":
+        print "Saindo."
+    else:
+        print "Modo inválido. Tente novamente."
+        interface_choose_mode()
 
-    start_server_mode()
 
 def start_client_mode():
 #     print "IP"
@@ -49,10 +48,11 @@ def start_client_mode():
         start_client_mode()
         return
     
-    c_client = client.Client(connection_info['IP'], int(connection_info['port']))
+    # c_client = client.Client(connection_info['IP'], int(connection_info['port']))
     
     while True:
         message = raw_input()
+        c_client = client.Client(connection_info['IP'], int(connection_info['port']))
         c_client.send(message)
         
 def start_server_mode():

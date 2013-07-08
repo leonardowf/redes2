@@ -9,6 +9,8 @@ class Server:
     expected_sequence_number = 0
     limit_seq_num = 256
     data = ""
+    client_IP = "127.0.0.1"
+    client_port = 9002
     
     def __init__(self, UDP_IP, UDP_port):
         self.UDP_IP = UDP_IP
@@ -41,9 +43,7 @@ class Server:
             
             an_ACK = packet.Packet("", 0)
             raw_ACK = an_ACK.create_raw_ACK(a_packet.sequence_number)
-            self.socket.sendto(raw_ACK, (self.UDP_IP, 9002))
-        
-        
+            self.socket.sendto(raw_ACK, (self.client_IP, self.client_port))
         
     def transmission_started(self):
         msg = "Recebi um pedido de transmissão"
@@ -53,7 +53,7 @@ class Server:
         
         an_ACK = packet.Packet("", 0)
         raw_ACK = an_ACK.create_raw_ACK(self.expected_sequence_number)
-        self.socket.sendto(raw_ACK, (self.UDP_IP, 9002))
+        self.socket.sendto(raw_ACK, (self.client_IP, self.client_port))
         
         while True:
             data, addr = self.socket.recvfrom(1024) # buffer size is 1024 bytes
@@ -103,12 +103,12 @@ class Server:
     def send_ACK(self, sequence_number):
         an_ACK = packet.Packet("", 0)
         raw_ACK = an_ACK.create_raw_ACK(sequence_number)
-        self.socket.sendto(raw_ACK, (self.UDP_IP, 9002))
+        self.socket.sendto(raw_ACK, (self.client_IP, self.client_port))
     
     def send_NACK(self, sequence_number):
         an_NACK = packet.Packet("", 0)
         raw_NACK = an_NACK.create_raw_NACK(sequence_number)
-        self.socket.sendto(raw_NACK, (self.UDP_IP, 9002))
+        self.socket.sendto(raw_NACK, (self.client_IP, self.client_port))
         
     
     def increments_expected_sequence_number(self):

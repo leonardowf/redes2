@@ -20,7 +20,7 @@ class Client:
         self.UDP_IP = UDP_IP
         self.UDP_port = UDP_port
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        
+        self.loggers = []
         
         self.socket.bind((self.UDP_IP, 9002))
     
@@ -31,6 +31,7 @@ class Client:
         time = datetime.time(datetime.now())
         for logger in self.loggers:
             logger.log(time, message)
+        nop = 0
     
     def log(self, message):
         self.notify_all(message)
@@ -74,7 +75,6 @@ class Client:
         self.list_of_packets = []
         for i in range(0, bytes, size_to_split):
             splitted_data = data[i:i + size_to_split]
-            print "wtf: " + str(self.seq_num)
             a_packet = packet.Packet(splitted_data, self.seq_num)
             self.list_of_packets.append(a_packet)
             self.increments_sequence_number()
@@ -142,6 +142,7 @@ class Client:
         p = packet.Packet("", -1)
         raw_end = p.pack()
         self.send_packet(p)
+        self.loggers = []
         self.socket.close()
     
     def send_packet(self, a_packet):

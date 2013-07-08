@@ -49,14 +49,19 @@ def start_client_mode():
         return
     
     # c_client = client.Client(connection_info['IP'], int(connection_info['port']))
+    a_logger = logger.Logger()
     
     while True:
         message = raw_input()
         c_client = client.Client(connection_info['IP'], int(connection_info['port']))
+        c_client.add_logger(a_logger)
         c_client.send(message)
         
 def start_server_mode():
     s_server = server.Server("127.0.0.1", 9001)
+    a_logger = logger.Logger()
+    s_server.add_logger(a_logger)
+    
     s_server.listen()
 
 def valid_IP(IP):
@@ -90,30 +95,6 @@ interface_choose_mode()
 
 
 
-
-
-
-
-
-
-# html = logger.LoggerHTML("testehtml.html")
-# txt1 = logger.LoggerFile("teste1.txt")
-# txt2 = logger.LoggerFile("teste2.txt")
-# x = logger.Logger()
-# 
-# c = client.Client("127.0.0.1", 5005)
-# s = server.Server("127.0.0.1", 5005)
-# c.add_logger(html)
-# c.add_logger(txt1)
-# c.add_logger(txt2)
-# c.add_logger(x)
-# 
-# c.log("as mensagens vão para todos os logs")
-# c.log("e como se todos fossem 'observers'")
-# c.log("mas não são")
-# c.log("huhuhu")
-# 
-# c.send("banana")
 
 
 

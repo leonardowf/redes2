@@ -46,7 +46,8 @@ class Server:
         
         
     def transmission_started(self):
-        print "recebi um pedido de transmissão"
+        msg = "Recebi um pedido de transmissão"
+        self.notify_all(msg)
         
         self.list_of_packets = []
         
@@ -59,15 +60,16 @@ class Server:
             a_packet = packet.Packet("", 0)
             a_packet.unpack(data)
             
-            print "pacote esperado é %d" % self.expected_sequence_number
-            print "recebi o %d" % a_packet.sequence_number
+            msg = "Pacote esperado: <%d> Pacote Recebido <%d>" % (self.expected_sequence_number, a_packet.sequence_number)
+            self.notify_all(msg)
             
             if (a_packet.sequence_number == self.expected_sequence_number):
                 # significa que o pacote tá na ordem certa
                 self.list_of_packets.append(a_packet)
                 self.data = self.data + a_packet.data
                 self.send_ACK(self.expected_sequence_number)
-                print "beleza recebi o pacote esperado enviei ack do %d" % self.expected_sequence_number
+                msg = "Recebi o pacote esperado enviei ack do %d" % self.expected_sequence_number
+                self.notify_all(msg)
                 self.increments_expected_sequence_number()
 
             else:
@@ -76,17 +78,21 @@ class Server:
                     return
                     
                 elif (self.ja_tenho(a_packet)):
-                    print "ja tenho o %d" % a_packet.sequence_number
+                    msg = "Ja tenho o %d" % a_packet.sequence_number
+                    self.notify_all(msg)
                 else:
-                    print "fora de sequencia esperava %d recebi %d" % (self.expected_sequence_number, a_packet.sequence_number)
+                    msg =  "Fora de sequencia esperava %d recebi %d" % (self.expected_sequence_number, a_packet.sequence_number)
+                    self.notify_all(msg)
                     self.send_NACK(self.expected_sequence_number)
     
     def finalizes_transmission(self):
         self.expected_sequence_number = 0
-        print self.data
+        msg = "Terminei a transmissao com essa data: <%s>" % self.data
+        self.notify_all(msg)
         self.data = ""
         self.list_of_packets = []
-        print "finalizar"
+        msg = "Finalizar"
+        self.notify_all(msg)
                 
     def ja_tenho (self, a_packet):
         for p in self.list_of_packets:

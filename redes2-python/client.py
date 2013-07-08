@@ -46,18 +46,20 @@ class Client:
         
         response = self.receive_response()
         if response.is_ACK():
-            print "ok, pode comecar o a transmissão"    
+            msg = "Iniciando transmissão"
+            self.notify_all(msg)
+            # print "ok, pode comecar o a transmissão"    
     
     def next_packet(self, lose):
         switch_lose = lose
         
         for a_packet in self.list_of_packets:
-            print "packet %d foi acked?: %s devo perder? %s" % (a_packet.sequence_number, a_packet.acked, lose)
+            # print "packet %d foi acked?: %s devo perder? %s" % (a_packet.sequence_number, a_packet.acked, lose)
             if (not a_packet.acked):
                 if (switch_lose):
                     switch_lose = False 
                 else:
-                    print "proximo packet é %d" % a_packet.sequence_number
+                    # print "proximo packet é %d" % a_packet.sequence_number
                     return a_packet
                     
                 
@@ -71,7 +73,7 @@ class Client:
         size_to_split = self.packet_size
         self.list_of_packets = []
         for i in range(0, bytes, size_to_split):
-            splitted_data = data[i:i+size_to_split]
+            splitted_data = data[i:i + size_to_split]
             print "wtf: " + str(self.seq_num)
             a_packet = packet.Packet(splitted_data, self.seq_num)
             self.list_of_packets.append(a_packet)
@@ -85,43 +87,51 @@ class Client:
             lose = self.should_i_lose_this_packet()
         
             if (lose):
-                print "Vou perder esse pacote %d" % p.sequence_number
+                # print "Vou perder esse pacote %d" % p.sequence_number
+                msg = "Perdendo o pacote %d" % p.sequence_number
+                self.notify_all(msg)
                 p = self.next_packet(True)
                 
                 if (p):
                     self.send_packet(p)
-                    print "enviei pacote %d" % p.sequence_number
+                    msg = "Enviei pacote %d" % p.sequence_number
+                    self.notify_all(msg)
                     r = self.receive_response()
-                    print "recebi a resposta: %d é ack? %s" % (r.sequence_number, r.is_ACK())
                     if (r.is_ACK()):
                         print "isso nao deveria acontecer"
                     else:
-                        print "NACK %d" % r.sequence_number
+                        msg = "NACK %d" % r.sequence_number
+                        self.notify_all(msg)
                     # r is ack
                     
                 # if (p)
             # fim do if (lose)
             elif (dup):
-                print "enviando duplicado o: %d" % p.sequence_number
+                msg = "Enviando duplicado o: %d" % p.sequence_number
+                self.notify_all(msg)
                 
                 self.send_packet(p)
                 self.send_packet(p)
                 
                 r = self.receive_response()
                 if (r.is_ACK() and (r.sequence_number == p.sequence_number)):
-                    print "recebi um ack com %d" % r.sequence_number
+                    msg = "Recebi um ack com %d" % r.sequence_number
+                    self.notify_all(msg)
                     p.acked = True
                 # end if is ack
                 else:
-                    print "recebi um nack de %d" % r.sequence_number
+                    msg = "recebi um nack de %d" % r.sequence_number
+                    self.notify_all(msg)
                 # end else
             # end if dup
             else:
-                print "enviei normalmente o %d" % p.sequence_number
+                msg = "Enviei normalmente o %d" % p.sequence_number
+                self.notify_all(msg)
                 self.send_packet(p)
                 received_packet = self.receive_response()
                 if (received_packet.is_ACK()):
-                    print "ACK do " + str(received_packet.sequence_number)
+                    msg = "ACK do " + str(received_packet.sequence_number)
+                    self.notify_all(msg)
                     p.acked = True
             # else normalmente
             p = self.next_packet(False)
@@ -141,7 +151,7 @@ class Client:
     def should_i_duplicate_this_packet(self):
         if (self.duplicate_packets_mode):
             r = random.randint(1, 100)
-            if (r <= self.duplicate_percentage): # duplicar
+            if (r <= self.duplicate_percentage):  # duplicar
                 return True
         else:
             return False
@@ -149,7 +159,7 @@ class Client:
     def should_i_lose_this_packet(self):
         if (self.lose_packets_mode):
             r = random.randint(1, 100)
-            if (r <= self.lost_percentage): # perdeu
+            if (r <= self.lost_percentage):  # perdeu
                 return True
             else:
                 return False
@@ -162,7 +172,7 @@ class Client:
 
         data = None
         while True:
-            data, addr = self.socket.recvfrom(1024) # buffer size is 1024 bytes
+            data, addr = self.socket.recvfrom(1024)  # buffer size is 1024 bytes
             if (data):
                 p = packet.Packet("", 0)
                 p.unpack(data)

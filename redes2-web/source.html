@@ -4,117 +4,715 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-	<!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Redes de Computadores II</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Redes de Computadores II</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<style>
-			body {
-				padding-top: 60px;
-				padding-bottom: 40px;
-			}
-		</style>
-		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-		<link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
 
-		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
-		<link rel="stylesheet" href="lib/styles/default.css">
-		<script src="lib/highlight.pack.js"></script>
-		<script>
-			hljs.initHighlightingOnLoad();
-		</script>
-	</head>
-	<body>
-		<!--[if lt IE 7]>
-		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-		<![endif]-->
+        <link rel="stylesheet" href="lib/styles/default.css">
+        <script src="lib/highlight.pack.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
-		<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-					<a class="brand" href="index.html">Trabalho Prático</a>
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<li >
-								<a href="report.html">Relatório</a>
-							</li>
-							<li class="active">
-								<a href="source.html">Código Fonte</a>
-							</li>
-							<li>
-								<a href="log.html">Logs de Execução</a>
-							</li>
-						</ul>
-					</div><!--/.nav-collapse -->
-				</div>
-			</div>
-		</div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                    <a class="brand" href="index.html">Trabalho Prático</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li >
+                                <a href="report.html">Relatório</a>
+                            </li>
+                            <li class="active">
+                                <a href="source.html">Código Fonte</a>
+                            </li>
+                            <li>
+                                <a href="log.html">Logs de Execução</a>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
 
-		<div class="container">
+        <div class="container">
 
-			<!-- Example row of columns -->
-			<div class="row">
-				<div class="span2">
-					<h2>Versões</h2>
-					<ul>
-						<li>
-							<a href="source/client.py.txt">client.py.txt</a>
-						</li>
-						<li>
-							<a href="source/server.py.txt">server.py.txt</a>
-						</li>
-						<li>
-							<a href="source/complete.tar.gz">complete.tar.gz</a>
-						</li>
-					</ul>
-				</div>
-				<div class="span10">
-					<h2>Código Fonte</h2>
-					<p>
-						Código em python contendo a implementação do trabalho.
-					</p>
-					<h3>Cliente</h3>
-					<p><pre><code> class batavo: something </code></pre></p>
-					<h3>Servidor</h3>
-					<p><pre><code> class batavo: something </code></pre></p>
-				</div>
-			</div>
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="span2">
+                    <h2>Versões</h2>
+                    <ul>
+                        <li>
+                            <a href="source/client.py.txt">client.py.txt</a>
+                        </li>
+                        <li>
+                            <a href="source/server.py.txt">server.py.txt</a>
+                        </li>
+                        <li>
+                            <a href="source/application.py.txt">application.py.txt</a>
+                        </li>
+                        <li>
+                            <a href="source/packet.py.txt">packet.py.txt</a>
+                        </li>
+                        <li>
+                            <a href="source/logger.py.txt">logger.py.txt</a>
+                        </li>
+                        <li>
+                            <a href="source/complete.tar.gz">complete.tar.gz</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="span10">
+                    <h2>Código Fonte</h2>
+                    <p>
+                        Código em python contendo a implementação do trabalho.
+                    </p>
+                    <h3>Cliente</h3>
+                    <p>
+                        <pre><code># coding=UTF-8
 
-			<hr>
+from datetime import datetime
+import socket
+import packet
+import random
 
-			<footer>
-				<p>
-					Leonardo Wistuba de França
-				</p>
-			</footer>
 
-		</div>
-		<!-- /container -->
+class Client:
+    loggers = []
+    start_identifier = 0
+    limit_seq_num = 256
+    packet_size = 1
+    lost_percentage = 20
+    duplicate_percentage = 20
+    lose_packets_mode = True
+    duplicate_packets_mode = True
+    
+    def __init__(self, UDP_IP, UDP_port):
+        self.UDP_IP = UDP_IP
+        self.UDP_port = UDP_port
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self.loggers = []
+        
+        self.socket.bind((self.UDP_IP, 9002))
+    
+    def add_logger(self, logger):
+        self.loggers.append(logger)
+    
+    def notify_all(self, message):
+        time = datetime.time(datetime.now())
+        for logger in self.loggers:
+            logger.log(time, message)
+        nop = 0
+    
+    def log(self, message):
+        self.notify_all(message)
+        
+        
+    def send_start_transmission_request(self):
+        self.start_identifier = random.randint(0, 255)
+        self.seq_num = self.start_identifier
+        
+        p = packet.Packet("", 0)
+        raw_start = p.create_raw_start(self.start_identifier)
+        self.socket.sendto(raw_start, (self.UDP_IP, self.UDP_port))
+        
+        response = self.receive_response()
+        if response.is_ACK():
+            msg = "Iniciando transmissão"
+            self.notify_all(msg)
+            # print "ok, pode comecar o a transmissão"    
+    
+    def next_packet(self, lose):
+        switch_lose = lose
+        
+        for a_packet in self.list_of_packets:
+            # print "packet %d foi acked?: %s devo perder? %s" % (a_packet.sequence_number, a_packet.acked, lose)
+            if (not a_packet.acked):
+                if (switch_lose):
+                    switch_lose = False 
+                else:
+                    # print "proximo packet é %d" % a_packet.sequence_number
+                    return a_packet
+                    
+                
+        return False
+            
+        
+    def send(self, data):
+        self.send_start_transmission_request()
+        # quebra data em pequenos pacotes
+        bytes = len(data)
+        size_to_split = self.packet_size
+        self.list_of_packets = []
+        for i in range(0, bytes, size_to_split):
+            splitted_data = data[i:i + size_to_split]
+            a_packet = packet.Packet(splitted_data, self.seq_num)
+            self.list_of_packets.append(a_packet)
+            self.increments_sequence_number()
+            # temos uma lista com todos os packets
+        p = self.next_packet(False)
+        
+        while (p):
+        
+            dup = self.should_i_duplicate_this_packet()
+            lose = self.should_i_lose_this_packet()
+        
+            if (lose):
+                # print "Vou perder esse pacote %d" % p.sequence_number
+                msg = "Perdendo o pacote %d" % p.sequence_number
+                self.notify_all(msg)
+                p = self.next_packet(True)
+                
+                if (p):
+                    self.send_packet(p)
+                    msg = "Enviei pacote %d" % p.sequence_number
+                    self.notify_all(msg)
+                    r = self.receive_response()
+                    if (r.is_ACK()):
+                        print "isso nao deveria acontecer"
+                    else:
+                        msg = "NACK %d" % r.sequence_number
+                        self.notify_all(msg)
+                    # r is ack
+                    
+                # if (p)
+            # fim do if (lose)
+            elif (dup):
+                msg = "Enviando duplicado o: %d" % p.sequence_number
+                self.notify_all(msg)
+                
+                self.send_packet(p)
+                self.send_packet(p)
+                
+                r = self.receive_response()
+                if (r.is_ACK() and (r.sequence_number == p.sequence_number)):
+                    msg = "Recebi um ack com %d" % r.sequence_number
+                    self.notify_all(msg)
+                    p.acked = True
+                # end if is ack
+                else:
+                    msg = "recebi um nack de %d" % r.sequence_number
+                    self.notify_all(msg)
+                # end else
+            # end if dup
+            else:
+                msg = "Enviei normalmente o %d" % p.sequence_number
+                self.notify_all(msg)
+                self.send_packet(p)
+                received_packet = self.receive_response()
+                if (received_packet.is_ACK()):
+                    msg = "ACK do " + str(received_packet.sequence_number)
+                    self.notify_all(msg)
+                    p.acked = True
+            # else normalmente
+            p = self.next_packet(False)
+        # fim do while
+        self.send_end_of_transmission()
+            
+    def send_end_of_transmission(self):
+        p = packet.Packet("", -1)
+        raw_end = p.pack()
+        self.send_packet(p)
+        self.loggers = []
+        self.socket.close()
+    
+    def send_packet(self, a_packet):
+        raw_packet = a_packet.pack()
+        self.socket.sendto(raw_packet, (self.UDP_IP, self.UDP_port))
+        
+    def should_i_duplicate_this_packet(self):
+        if (self.duplicate_packets_mode):
+            r = random.randint(1, 100)
+            if (r <= self.duplicate_percentage):  # duplicar
+                return True
+        else:
+            return False
+        
+    def should_i_lose_this_packet(self):
+        if (self.lose_packets_mode):
+            r = random.randint(1, 100)
+            if (r <= self.lost_percentage):  # perdeu
+                return True
+            else:
+                return False
+        else:
+            return False
+        
+        
+    
+    def receive_response(self):
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
-		</script>
+        data = None
+        while True:
+            data, addr = self.socket.recvfrom(1024)  # buffer size is 1024 bytes
+            if (data):
+                p = packet.Packet("", 0)
+                p.unpack(data)
+                return p;
 
-		<script src="js/vendor/bootstrap.min.js"></script>
+    
+    def increments_sequence_number(self):
+        self.seq_num = self.seq_num + 1
+        if self.seq_num == self.limit_seq_num:
+            self.seq_num = 0
+            
+        
+    
 
-		<script src="js/main.js"></script>
+        
+        
+</code></pre>
+</p>                    <h3>Servidor</h3>
+                    <p>
+                        <pre><code># coding=UTF-8
 
-		<script>
-			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']]; ( function(d, t) {
-					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-					g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-					s.parentNode.insertBefore(g, s)
-				}(document, 'script'));
-		</script>
-	</body>
+import socket
+import packet
+from datetime import datetime
+
+class Server:
+    loggers = []
+    expected_sequence_number = 0
+    limit_seq_num = 256
+    data = ""
+    client_IP = "127.0.0.1"
+    client_port = 9002
+    
+    def __init__(self, UDP_IP, UDP_port):
+        self.UDP_IP = UDP_IP
+        self.UDP_port = UDP_port
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self.socket.bind((self.UDP_IP, self.UDP_port))
+    
+    def add_logger(self, logger):
+        self.loggers.append(logger)
+    
+    def notify_all(self, message):
+        time = datetime.time(datetime.now())
+        for logger in self.loggers:
+            logger.log(time, message)
+    
+    def log(self, message):
+        self.notify_all(message)
+        
+    def listen(self):
+        while True:
+            data, addr = self.socket.recvfrom(1024) # buffer size is 1024 bytes
+            # print "received message:", data + "with addr: ", addr
+            a_packet = packet.Packet("", 0)
+            a_packet.unpack(data)
+            
+            if (a_packet.is_start()):
+                self.expected_sequence_number = a_packet.sequence_number
+                self.transmission_started()
+            
+            
+            an_ACK = packet.Packet("", 0)
+            raw_ACK = an_ACK.create_raw_ACK(a_packet.sequence_number)
+            self.socket.sendto(raw_ACK, (self.client_IP, self.client_port))
+        
+    def transmission_started(self):
+        msg = "Recebi um pedido de transmissão"
+        self.notify_all(msg)
+        
+        self.list_of_packets = []
+        
+        an_ACK = packet.Packet("", 0)
+        raw_ACK = an_ACK.create_raw_ACK(self.expected_sequence_number)
+        self.socket.sendto(raw_ACK, (self.client_IP, self.client_port))
+        
+        while True:
+            data, addr = self.socket.recvfrom(1024) # buffer size is 1024 bytes
+            a_packet = packet.Packet("", 0)
+            a_packet.unpack(data)
+            
+            msg = "Pacote esperado: <%d> Pacote Recebido <%d>" % (self.expected_sequence_number, a_packet.sequence_number)
+            self.notify_all(msg)
+            
+            if (a_packet.sequence_number == self.expected_sequence_number):
+                # significa que o pacote tá na ordem certa
+                self.list_of_packets.append(a_packet)
+                self.data = self.data + a_packet.data
+                self.send_ACK(self.expected_sequence_number)
+                msg = "Recebi o pacote esperado enviei ack do %d" % self.expected_sequence_number
+                self.notify_all(msg)
+                self.increments_expected_sequence_number()
+
+            else:
+                if (a_packet.sequence_number == -1):
+                    self.finalizes_transmission()
+                    return
+                    
+                elif (self.ja_tenho(a_packet)):
+                    msg = "Ja tenho o %d" % a_packet.sequence_number
+                    self.notify_all(msg)
+                else:
+                    msg =  "Fora de sequencia esperava %d recebi %d" % (self.expected_sequence_number, a_packet.sequence_number)
+                    self.notify_all(msg)
+                    self.send_NACK(self.expected_sequence_number)
+    
+    def finalizes_transmission(self):
+        self.expected_sequence_number = 0
+        msg = "Terminei a transmissao com essa data: <%s>" % self.data
+        self.notify_all(msg)
+        self.data = ""
+        self.list_of_packets = []
+        msg = "Finalizar"
+        self.notify_all(msg)
+                
+    def ja_tenho (self, a_packet):
+        for p in self.list_of_packets:
+            if a_packet.sequence_number == p.sequence_number and a_packet.data == p.data:
+                return True
+        return False
+    
+    def send_ACK(self, sequence_number):
+        an_ACK = packet.Packet("", 0)
+        raw_ACK = an_ACK.create_raw_ACK(sequence_number)
+        self.socket.sendto(raw_ACK, (self.client_IP, self.client_port))
+    
+    def send_NACK(self, sequence_number):
+        an_NACK = packet.Packet("", 0)
+        raw_NACK = an_NACK.create_raw_NACK(sequence_number)
+        self.socket.sendto(raw_NACK, (self.client_IP, self.client_port))
+        
+    
+    def increments_expected_sequence_number(self):
+        self.expected_sequence_number = self.expected_sequence_number + 1
+        if self.expected_sequence_number == self.limit_seq_num:
+            self.expected_sequence_number = 0
+        
+        
+        
+        
+        
+        
+                
+            
+            
+            
+            
+        
+        
+        
+        
+
+</code></pre>
+</p>                    <h3>Application</h3>
+                    <p>
+                        <pre><code># coding=UTF-8
+
+import client
+import logger
+import server
+import socket
+
+
+def interface_choose_mode():
+    print "Escolha o modo:"
+    print "1) Cliente."
+    print "2) Servidor."
+    print "q) Sair."
+     
+    mode = raw_input()
+     
+    if mode == "1":
+        print "Modo <Cliente> selecionado."
+        start_client_mode()
+    elif mode == "2":
+        print "Modo <Servidor> selecionado."
+        start_server_mode()
+    elif mode == "q":
+        print "Saindo."
+    else:
+        print "Modo inválido. Tente novamente."
+        interface_choose_mode()
+
+
+def start_client_mode():
+#     print "IP"
+#     UDP_IP = raw_input()
+#     print "PORT"
+#     UDP_port = raw_input()
+    
+    connection_info = {'IP': "", 'port': ""}
+    
+    complete_with_default(connection_info)
+    
+    print connection_info['IP']
+    
+    if not valid_IP(connection_info['IP']):
+        print "IP inválida."
+        start_client_mode()
+        return
+    if not valid_port(connection_info['port']):
+        print "Porta inválida."
+        start_client_mode()
+        return
+    
+    # c_client = client.Client(connection_info['IP'], int(connection_info['port']))
+    a_logger = logger.Logger()
+    a_logger_file = logger.LoggerFile("log_cliente.txt")
+    print "Perder mensagens com % (exemplo: 20)"
+    lost_percent = int(raw_input())
+    print "Duplicar mensagens com % (exemplo: 20)"
+    duplicate_percent = int(raw_input())
+    while True:
+        message = raw_input()
+        c_client = client.Client(connection_info['IP'], int(connection_info['port']))
+        c_client.lost_percentage = lost_percent
+        c_client.duplicate_percentage = duplicate_percent
+        c_client.add_logger(a_logger)
+        c_client.add_logger(a_logger_file)
+        c_client.send(message)
+        
+def start_server_mode():
+    s_server = server.Server("127.0.0.1", 9001)
+    a_logger = logger.Logger()
+    a_logger_file = logger.LoggerFile("log_servidor.txt")
+    s_server.add_logger(a_logger)
+    s_server.add_logger(a_logger_file)
+    
+    s_server.listen()
+
+def valid_IP(IP):
+    try:
+        socket.inet_aton(IP)
+        return True
+    except socket.error:
+        return False
+
+def valid_port(port):
+    # TODO
+    return True
+
+def complete_with_default(connection_info):
+    default_IP = "127.0.0.1"
+    default_port = "9001"
+    
+    if connection_info['IP'].__len__() < 7:
+        connection_info['IP'] = default_IP
+        connection_info['port'] = default_port
+        
+interface_choose_mode()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+</p>                    <h3>Packet</h3>
+                    <p>
+                        <pre><code># coding=UTF-8
+
+from collections import namedtuple
+from struct import *
+
+DATA_ID =   0b0101010101010111
+ACK_ID =    0b1010101010101010
+NACK_ID =   0b0101010111011111
+START_ID =  0b1010101110111010
+HEADER_LEN = 6  # Bytes
+
+class Packet:
+    
+    packet = namedtuple("packet", ["seq_num", "packet_type", "data", "acked"])
+    ack = namedtuple("packet", ["seq_num", "packet_type"])
+    
+    def __init__(self, data, sequence_number):
+        self.data = data
+        self.data_size = len(data)
+        self.sequence_number = sequence_number
+        self.type = DATA_ID
+        self.acked = False
+        
+    def pack(self):
+        raw_pkt = pack('iH' + str(len(self.data)) + 's', self.sequence_number, self.type, self.data)
+        # print "pack sequence number" + str(self.sequence_number)
+        return raw_pkt
+    
+    def unpack(self, raw_packet):
+        s = len(raw_packet)
+        pkt_unpacked = unpack('iH' + str(len(raw_packet) - HEADER_LEN) + 's', raw_packet) + (False,)
+        p = self.packet._make(pkt_unpacked)
+        
+        self.sequence_number = p.seq_num
+        # print "p.seqnum: " + str(p.seq_num)
+        # print "unpack" + str(self.sequence_number)
+        self.data = p.data
+        self.data_size = len(self.data)
+        self.type = p.packet_type
+        self.acked = p.acked
+        
+    def create_raw_start(self, seq_num):
+        self.data = ""
+        self.type = START_ID
+        self.acked = False
+        
+        # print "no ack seq_num %d " % seq_num
+        self.sequence_number = seq_num
+        
+        return self.pack()
+    
+    
+
+    def create_raw_ACK(self, seq_num):
+        self.data = ""
+        self.type = ACK_ID
+        self.acked = False
+        
+        # print "no ack seq_num %d " % seq_num
+        self.sequence_number = seq_num
+        
+        return self.pack()
+    
+    def create_raw_NACK(self, seq_num):
+        self.data = ""
+        self.type = NACK_ID
+        self.acked = False
+        
+        # print "no ack seq_num %d " % seq_num
+        self.sequence_number = seq_num
+        
+        return self.pack()
+    
+    def is_start(self):
+        if self.type == START_ID:
+            return True
+        else:
+            return False
+    
+    def is_ACK(self):
+        if self.type == ACK_ID:
+            return True
+        else:
+            return False
+            </code></pre>
+</p>                    <h3>Logger</h3>
+                    <p>
+                        <pre><code># coding=UTF-8
+
+import os
+
+# Define a class Logger e classes relacionadas
+# Um Logger implementa o método log(time, message)
+# Para LoggerHTML e LoggerFile um diretório é criado, especificado por log_directory
+
+class Logger:
+    log_directory = "log/"
+    def __init__(self):
+        self.count = 0
+        if not os.path.exists(self.log_directory):
+            os.makedirs(self.log_directory)
+    
+    def log(self, time, message):
+        print "<#%d>" % self.count + "\t" + "<%s>" % time + "\t" + message
+        self.count = self.count + 1
+
+class LoggerHTML(Logger):
+    def __init__(self, file_name):
+        Logger.__init__(self)
+        self.file_descriptor = open(self.log_directory + file_name, "w")
+        self.write_html_header()
+        
+    def write_html_header(self):
+        self.file_descriptor.write("<html>")
+        self.file_descriptor.write("<head>")
+        self.file_descriptor.write("<body>")
+    
+    def log(self, time, message):
+        a_message = "<p>" + message + "</p>"
+        self.file_descriptor.write(a_message)
+        self.count = self.count + 1
+
+class LoggerFile(Logger):
+    def __init__(self, file_name):
+        Logger.__init__(self)
+        self.file_descriptor = open(self.log_directory + file_name, "w")
+    
+    def log(self, time, message):
+        a_message = "<#%d>" % self.count + "\t" + "<%s>" % time + "\t" + message + "\n"
+        self.file_descriptor.write(a_message)
+        self.count = self.count + 1
+</code></pre>
+</p>                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>
+                    Leonardo Wistuba de França
+                </p>
+            </footer>
+
+        </div>
+        <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
+        </script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+            ( function(d, t) {
+                    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                    g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+                    s.parentNode.insertBefore(g, s)
+                }(document, 'script'));
+        </script>
+    </body>
 </html>

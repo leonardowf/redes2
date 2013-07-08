@@ -1,0 +1,125 @@
+<#0>	<23:37:39.302955>	Recebi um pedido de transmissão
+<#1>	<23:37:39.304434>	Pacote esperado: <92> Pacote Recebido <92>
+<#2>	<23:37:39.304637>	Recebi o pacote esperado enviei ack do 92
+<#3>	<23:37:39.305196>	Pacote esperado: <93> Pacote Recebido <93>
+<#4>	<23:37:39.305394>	Recebi o pacote esperado enviei ack do 93
+<#5>	<23:37:39.305954>	Pacote esperado: <94> Pacote Recebido <94>
+<#6>	<23:37:39.306155>	Recebi o pacote esperado enviei ack do 94
+<#7>	<23:37:39.306272>	Pacote esperado: <95> Pacote Recebido <94>
+<#8>	<23:37:39.306337>	Ja tenho o 94
+<#9>	<23:37:39.306562>	Pacote esperado: <95> Pacote Recebido <95>
+<#10>	<23:37:39.306762>	Recebi o pacote esperado enviei ack do 95
+<#11>	<23:37:39.307141>	Pacote esperado: <96> Pacote Recebido <96>
+<#12>	<23:37:39.307343>	Recebi o pacote esperado enviei ack do 96
+<#13>	<23:37:39.307716>	Pacote esperado: <97> Pacote Recebido <97>
+<#14>	<23:37:39.307916>	Recebi o pacote esperado enviei ack do 97
+<#15>	<23:37:39.308318>	Pacote esperado: <98> Pacote Recebido <98>
+<#16>	<23:37:39.308508>	Recebi o pacote esperado enviei ack do 98
+<#17>	<23:37:39.309064>	Pacote esperado: <99> Pacote Recebido <99>
+<#18>	<23:37:39.309304>	Recebi o pacote esperado enviei ack do 99
+<#19>	<23:37:39.309864>	Pacote esperado: <100> Pacote Recebido <100>
+<#20>	<23:37:39.310107>	Recebi o pacote esperado enviei ack do 100
+<#21>	<23:37:39.310749>	Pacote esperado: <101> Pacote Recebido <101>
+<#22>	<23:37:39.310990>	Recebi o pacote esperado enviei ack do 101
+<#23>	<23:37:39.311633>	Pacote esperado: <102> Pacote Recebido <102>
+<#24>	<23:37:39.311873>	Recebi o pacote esperado enviei ack do 102
+<#25>	<23:37:39.312553>	Pacote esperado: <103> Pacote Recebido <103>
+<#26>	<23:37:39.312799>	Recebi o pacote esperado enviei ack do 103
+<#27>	<23:37:39.313453>	Pacote esperado: <104> Pacote Recebido <105>
+<#28>	<23:37:39.313612>	Fora de sequencia esperava 104 recebi 105
+<#29>	<23:37:39.314304>	Pacote esperado: <104> Pacote Recebido <104>
+<#30>	<23:37:39.314547>	Recebi o pacote esperado enviei ack do 104
+<#31>	<23:37:39.315004>	Pacote esperado: <105> Pacote Recebido <105>
+<#32>	<23:37:39.315247>	Recebi o pacote esperado enviei ack do 105
+<#33>	<23:37:39.315405>	Pacote esperado: <106> Pacote Recebido <105>
+<#34>	<23:37:39.315514>	Ja tenho o 105
+<#35>	<23:37:39.315644>	Pacote esperado: <106> Pacote Recebido <107>
+<#36>	<23:37:39.315747>	Fora de sequencia esperava 106 recebi 107
+<#37>	<23:37:39.316344>	Pacote esperado: <106> Pacote Recebido <106>
+<#38>	<23:37:39.316581>	Recebi o pacote esperado enviei ack do 106
+<#39>	<23:37:39.317199>	Pacote esperado: <107> Pacote Recebido <107>
+<#40>	<23:37:39.317371>	Recebi o pacote esperado enviei ack do 107
+<#41>	<23:37:39.317867>	Pacote esperado: <108> Pacote Recebido <108>
+<#42>	<23:37:39.318019>	Recebi o pacote esperado enviei ack do 108
+<#43>	<23:37:39.318491>	Pacote esperado: <109> Pacote Recebido <109>
+<#44>	<23:37:39.318636>	Recebi o pacote esperado enviei ack do 109
+<#45>	<23:37:39.319127>	Pacote esperado: <110> Pacote Recebido <111>
+<#46>	<23:37:39.319251>	Fora de sequencia esperava 110 recebi 111
+<#47>	<23:37:39.319910>	Pacote esperado: <110> Pacote Recebido <110>
+<#48>	<23:37:39.320055>	Recebi o pacote esperado enviei ack do 110
+<#49>	<23:37:39.320552>	Pacote esperado: <111> Pacote Recebido <111>
+<#50>	<23:37:39.320742>	Recebi o pacote esperado enviei ack do 111
+<#51>	<23:37:39.320981>	Pacote esperado: <112> Pacote Recebido <111>
+<#52>	<23:37:39.321179>	Ja tenho o 111
+<#53>	<23:37:39.321384>	Pacote esperado: <112> Pacote Recebido <112>
+<#54>	<23:37:39.321556>	Recebi o pacote esperado enviei ack do 112
+<#55>	<23:37:39.322049>	Pacote esperado: <113> Pacote Recebido <113>
+<#56>	<23:37:39.322232>	Recebi o pacote esperado enviei ack do 113
+<#57>	<23:37:39.322737>	Pacote esperado: <114> Pacote Recebido <114>
+<#58>	<23:37:39.322944>	Recebi o pacote esperado enviei ack do 114
+<#59>	<23:37:39.323195>	Pacote esperado: <115> Pacote Recebido <114>
+<#60>	<23:37:39.323392>	Ja tenho o 114
+<#61>	<23:37:39.323586>	Pacote esperado: <115> Pacote Recebido <115>
+<#62>	<23:37:39.323764>	Recebi o pacote esperado enviei ack do 115
+<#63>	<23:37:39.324322>	Pacote esperado: <116> Pacote Recebido <116>
+<#64>	<23:37:39.324514>	Recebi o pacote esperado enviei ack do 116
+<#65>	<23:37:39.325013>	Pacote esperado: <117> Pacote Recebido <117>
+<#66>	<23:37:39.325209>	Recebi o pacote esperado enviei ack do 117
+<#67>	<23:37:39.325751>	Pacote esperado: <118> Pacote Recebido <119>
+<#68>	<23:37:39.325959>	Fora de sequencia esperava 118 recebi 119
+<#69>	<23:37:39.326575>	Pacote esperado: <118> Pacote Recebido <118>
+<#70>	<23:37:39.326760>	Recebi o pacote esperado enviei ack do 118
+<#71>	<23:37:39.326997>	Pacote esperado: <119> Pacote Recebido <118>
+<#72>	<23:37:39.327198>	Ja tenho o 118
+<#73>	<23:37:39.327405>	Pacote esperado: <119> Pacote Recebido <119>
+<#74>	<23:37:39.327577>	Recebi o pacote esperado enviei ack do 119
+<#75>	<23:37:39.328077>	Pacote esperado: <120> Pacote Recebido <120>
+<#76>	<23:37:39.328303>	Recebi o pacote esperado enviei ack do 120
+<#77>	<23:37:39.328544>	Pacote esperado: <121> Pacote Recebido <120>
+<#78>	<23:37:39.328729>	Ja tenho o 120
+<#79>	<23:37:39.328924>	Pacote esperado: <121> Pacote Recebido <121>
+<#80>	<23:37:39.329089>	Recebi o pacote esperado enviei ack do 121
+<#81>	<23:37:39.329578>	Pacote esperado: <122> Pacote Recebido <122>
+<#82>	<23:37:39.329759>	Recebi o pacote esperado enviei ack do 122
+<#83>	<23:37:39.329989>	Pacote esperado: <123> Pacote Recebido <122>
+<#84>	<23:37:39.330177>	Ja tenho o 122
+<#85>	<23:37:39.330369>	Pacote esperado: <123> Pacote Recebido <123>
+<#86>	<23:37:39.330536>	Recebi o pacote esperado enviei ack do 123
+<#87>	<23:37:39.331009>	Pacote esperado: <124> Pacote Recebido <124>
+<#88>	<23:37:39.331188>	Recebi o pacote esperado enviei ack do 124
+<#89>	<23:37:39.331662>	Pacote esperado: <125> Pacote Recebido <125>
+<#90>	<23:37:39.331841>	Recebi o pacote esperado enviei ack do 125
+<#91>	<23:37:39.332373>	Pacote esperado: <126> Pacote Recebido <127>
+<#92>	<23:37:39.332539>	Fora de sequencia esperava 126 recebi 127
+<#93>	<23:37:39.333151>	Pacote esperado: <126> Pacote Recebido <127>
+<#94>	<23:37:39.333314>	Fora de sequencia esperava 126 recebi 127
+<#95>	<23:37:39.333889>	Pacote esperado: <126> Pacote Recebido <126>
+<#96>	<23:37:39.334069>	Recebi o pacote esperado enviei ack do 126
+<#97>	<23:37:39.334540>	Pacote esperado: <127> Pacote Recebido <127>
+<#98>	<23:37:39.334723>	Recebi o pacote esperado enviei ack do 127
+<#99>	<23:37:39.335206>	Pacote esperado: <128> Pacote Recebido <128>
+<#100>	<23:37:39.335386>	Recebi o pacote esperado enviei ack do 128
+<#101>	<23:37:39.335867>	Pacote esperado: <129> Pacote Recebido <129>
+<#102>	<23:37:39.336045>	Recebi o pacote esperado enviei ack do 129
+<#103>	<23:37:39.336453>	Pacote esperado: <130> Pacote Recebido <130>
+<#104>	<23:37:39.336506>	Recebi o pacote esperado enviei ack do 130
+<#105>	<23:37:39.336973>	Pacote esperado: <131> Pacote Recebido <131>
+<#106>	<23:37:39.337144>	Recebi o pacote esperado enviei ack do 131
+<#107>	<23:37:39.337572>	Pacote esperado: <132> Pacote Recebido <133>
+<#108>	<23:37:39.337694>	Fora de sequencia esperava 132 recebi 133
+<#109>	<23:37:39.338128>	Pacote esperado: <132> Pacote Recebido <132>
+<#110>	<23:37:39.338190>	Recebi o pacote esperado enviei ack do 132
+<#111>	<23:37:39.338426>	Pacote esperado: <133> Pacote Recebido <133>
+<#112>	<23:37:39.338484>	Recebi o pacote esperado enviei ack do 133
+<#113>	<23:37:39.338556>	Pacote esperado: <134> Pacote Recebido <133>
+<#114>	<23:37:39.338611>	Ja tenho o 133
+<#115>	<23:37:39.338862>	Pacote esperado: <134> Pacote Recebido <134>
+<#116>	<23:37:39.338955>	Recebi o pacote esperado enviei ack do 134
+<#117>	<23:37:39.339403>	Pacote esperado: <135> Pacote Recebido <135>
+<#118>	<23:37:39.339491>	Recebi o pacote esperado enviei ack do 135
+<#119>	<23:37:39.339859>	Pacote esperado: <136> Pacote Recebido <136>
+<#120>	<23:37:39.340005>	Recebi o pacote esperado enviei ack do 136
+<#121>	<23:37:39.340392>	Pacote esperado: <137> Pacote Recebido <137>
+<#122>	<23:37:39.340547>	Recebi o pacote esperado enviei ack do 137
+<#123>	<23:37:39.340801>	Pacote esperado: <138> Pacote Recebido <138>
+<#124>	<23:37:

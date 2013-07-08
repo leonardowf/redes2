@@ -1,0 +1,97 @@
+<#0>	<23:37:39.303510>	Iniciando transmissão
+<#1>	<23:37:39.304098>	Enviei normalmente o 92
+<#2>	<23:37:39.304769>	ACK do 92
+<#3>	<23:37:39.304923>	Enviei normalmente o 93
+<#4>	<23:37:39.305526>	ACK do 93
+<#5>	<23:37:39.305679>	Enviando duplicado o: 94
+<#6>	<23:37:39.306203>	Recebi um ack com 94
+<#7>	<23:37:39.306305>	Enviei normalmente o 95
+<#8>	<23:37:39.306803>	ACK do 95
+<#9>	<23:37:39.306901>	Enviei normalmente o 96
+<#10>	<23:37:39.307379>	ACK do 96
+<#11>	<23:37:39.307475>	Enviei normalmente o 97
+<#12>	<23:37:39.307950>	ACK do 97
+<#13>	<23:37:39.308045>	Enviei normalmente o 98
+<#14>	<23:37:39.308638>	ACK do 98
+<#15>	<23:37:39.308792>	Enviei normalmente o 99
+<#16>	<23:37:39.309434>	ACK do 99
+<#17>	<23:37:39.309589>	Enviei normalmente o 100
+<#18>	<23:37:39.310237>	ACK do 100
+<#19>	<23:37:39.310434>	Enviei normalmente o 101
+<#20>	<23:37:39.311120>	ACK do 101
+<#21>	<23:37:39.311319>	Enviei normalmente o 102
+<#22>	<23:37:39.312003>	ACK do 102
+<#23>	<23:37:39.312201>	Enviei normalmente o 103
+<#24>	<23:37:39.312929>	ACK do 103
+<#25>	<23:37:39.313127>	Perdendo o pacote 104
+<#26>	<23:37:39.313315>	Enviei pacote 105
+<#27>	<23:37:39.313873>	NACK 104
+<#28>	<23:37:39.314012>	Enviei normalmente o 104
+<#29>	<23:37:39.314586>	ACK do 104
+<#30>	<23:37:39.314722>	Enviando duplicado o: 105
+<#31>	<23:37:39.315286>	Recebi um ack com 105
+<#32>	<23:37:39.315419>	Perdendo o pacote 106
+<#33>	<23:37:39.315566>	Enviei pacote 107
+<#34>	<23:37:39.315935>	NACK 106
+<#35>	<23:37:39.316061>	Enviei normalmente o 106
+<#36>	<23:37:39.316710>	ACK do 106
+<#37>	<23:37:39.316926>	Enviei normalmente o 107
+<#38>	<23:37:39.317439>	ACK do 107
+<#39>	<23:37:39.317627>	Enviei normalmente o 108
+<#40>	<23:37:39.318086>	ACK do 108
+<#41>	<23:37:39.318263>	Enviei normalmente o 109
+<#42>	<23:37:39.318703>	ACK do 109
+<#43>	<23:37:39.318873>	Perdendo o pacote 110
+<#44>	<23:37:39.319048>	Enviei pacote 111
+<#45>	<23:37:39.319453>	NACK 110
+<#46>	<23:37:39.319672>	Enviei normalmente o 110
+<#47>	<23:37:39.320121>	ACK do 110
+<#48>	<23:37:39.320313>	Enviando duplicado o: 111
+<#49>	<23:37:39.320812>	Recebi um ack com 111
+<#50>	<23:37:39.321046>	Enviei normalmente o 112
+<#51>	<23:37:39.321621>	ACK do 112
+<#52>	<23:37:39.321830>	Enviei normalmente o 113
+<#53>	<23:37:39.322295>	ACK do 113
+<#54>	<23:37:39.322502>	Enviando duplicado o: 114
+<#55>	<23:37:39.323013>	Recebi um ack com 114
+<#56>	<23:37:39.323240>	Enviei normalmente o 115
+<#57>	<23:37:39.323829>	ACK do 115
+<#58>	<23:37:39.324053>	Enviei normalmente o 116
+<#59>	<23:37:39.324581>	ACK do 116
+<#60>	<23:37:39.324786>	Enviei normalmente o 117
+<#61>	<23:37:39.325272>	ACK do 117
+<#62>	<23:37:39.325495>	Perdendo o pacote 118
+<#63>	<23:37:39.325670>	Enviei pacote 119
+<#64>	<23:37:39.326187>	NACK 118
+<#65>	<23:37:39.326333>	Enviando duplicado o: 118
+<#66>	<23:37:39.326830>	Recebi um ack com 118
+<#67>	<23:37:39.327075>	Enviei normalmente o 119
+<#68>	<23:37:39.327640>	ACK do 119
+<#69>	<23:37:39.327845>	Enviando duplicado o: 120
+<#70>	<23:37:39.328373>	Recebi um ack com 120
+<#71>	<23:37:39.328593>	Enviei normalmente o 121
+<#72>	<23:37:39.329157>	ACK do 121
+<#73>	<23:37:39.329346>	Enviando duplicado o: 122
+<#74>	<23:37:39.329830>	Recebi um ack com 122
+<#75>	<23:37:39.330051>	Enviei normalmente o 123
+<#76>	<23:37:39.330601>	ACK do 123
+<#77>	<23:37:39.330793>	Enviei normalmente o 124
+<#78>	<23:37:39.331252>	ACK do 124
+<#79>	<23:37:39.331444>	Enviei normalmente o 125
+<#80>	<23:37:39.331909>	ACK do 125
+<#81>	<23:37:39.332101>	Perdendo o pacote 126
+<#82>	<23:37:39.332296>	Enviei pacote 127
+<#83>	<23:37:39.332761>	NACK 126
+<#84>	<23:37:39.332903>	Perdendo o pacote 126
+<#85>	<23:37:39.333070>	Enviei pacote 127
+<#86>	<23:37:39.333533>	NACK 126
+<#87>	<23:37:39.333676>	Enviei normalmente o 126
+<#88>	<23:37:39.334134>	ACK do 126
+<#89>	<23:37:39.334322>	Enviei normalmente o 127
+<#90>	<23:37:39.334788>	ACK do 127
+<#91>	<23:37:39.334987>	Enviei normalmente o 128
+<#92>	<23:37:39.335449>	ACK do 128
+<#93>	<23:37:39.335648>	Enviei normalmente o 129
+<#94>	<23:37:39.336107>	ACK do 129
+<#95>	<23:37:39.336330>	Enviei normalmente o 130
+<#96>	<23:37:39.336557>	

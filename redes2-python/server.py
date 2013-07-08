@@ -32,7 +32,10 @@ class Server:
     def listen(self):
         while True:
             data, addr = self.socket.recvfrom(1024) # buffer size is 1024 bytes
-            # print "received message:", data + "with addr: ", addr
+            msg = "O IP do cliente e %s na porta: %s" % (str(addr[0]), str(addr[1]))
+            self.notify_all(msg)
+            self.client_IP = str(addr[0])
+            self.client_port = int(addr[1])
             a_packet = packet.Packet("", 0)
             a_packet.unpack(data)
             

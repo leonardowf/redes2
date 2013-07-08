@@ -33,31 +33,31 @@ def start_client_mode():
 #     print "PORT"
 #     UDP_port = raw_input()
     
-    connection_info = {'IP': "", 'port': ""}
+    print "Digite o ip do servidor"
+    server_IP = raw_input()
     
-    complete_with_default(connection_info)
-    
-    print connection_info['IP']
-    
-    if not valid_IP(connection_info['IP']):
+    print "Digite a porta do servidor"
+    server_port = raw_input()
+        
+    if not valid_IP(server_IP):
         print "IP inválida."
-        start_client_mode()
-        return
-    if not valid_port(connection_info['port']):
-        print "Porta inválida."
         start_client_mode()
         return
     
     # c_client = client.Client(connection_info['IP'], int(connection_info['port']))
     a_logger = logger.Logger()
     a_logger_file = logger.LoggerFile("log_cliente.txt")
+    
     print "Perder mensagens com % (exemplo: 20)"
     lost_percent = int(raw_input())
+    
     print "Duplicar mensagens com % (exemplo: 20)"
     duplicate_percent = int(raw_input())
+    
     while True:
+        print ">",
         message = raw_input()
-        c_client = client.Client(connection_info['IP'], int(connection_info['port']))
+        c_client = client.Client(server_IP, int(server_port))
         c_client.lost_percentage = lost_percent
         c_client.duplicate_percentage = duplicate_percent
         c_client.add_logger(a_logger)
@@ -79,18 +79,6 @@ def valid_IP(IP):
         return True
     except socket.error:
         return False
-
-def valid_port(port):
-    # TODO
-    return True
-
-def complete_with_default(connection_info):
-    default_IP = "127.0.0.1"
-    default_port = "9001"
-    
-    if connection_info['IP'].__len__() < 7:
-        connection_info['IP'] = default_IP
-        connection_info['port'] = default_port
         
 interface_choose_mode()
 

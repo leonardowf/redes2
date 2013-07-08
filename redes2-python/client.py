@@ -15,6 +15,7 @@ class Client:
     duplicate_percentage = 20
     lose_packets_mode = True
     duplicate_packets_mode = True
+    default_receiving_port = 9002
     
     def __init__(self, UDP_IP, UDP_port):
         self.UDP_IP = UDP_IP
@@ -22,7 +23,8 @@ class Client:
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.loggers = []
         
-        self.socket.bind((self.UDP_IP, 9002))
+        self.socket.bind((self.UDP_IP, self.default_receiving_port))
+        #porta para ouvir
     
     def add_logger(self, logger):
         self.loggers.append(logger)

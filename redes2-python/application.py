@@ -65,7 +65,9 @@ def start_client_mode():
         c_client.send(message)
         
 def start_server_mode():
-    s_server = server.Server("127.0.0.1", 9001)
+    print "Digite o ip do server"
+    server_IP = raw_input()
+    s_server = server.Server(server_IP, 9001)
     a_logger = logger.Logger()
     a_logger_file = logger.LoggerFile("log_servidor.txt")
     s_server.add_logger(a_logger)

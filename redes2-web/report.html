@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Redes de Computadores II</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+        <link rel="stylesheet" href="lib/styles/default.css">
+        <script src="lib/highlight.pack.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+                    <a class="brand" href="index.html">Trabalho Prático</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li >
+                                <a href="report.html">Relatório</a>
+                            </li>
+                            <li>
+                                <a href="source.html">Código Fonte</a>
+                            </li>
+                            <li class="active">
+                                <a href="log.html">Logs de Execução</a>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="span2">
+                    <h2>Download</h2>
+                </div>
+                <div class="span10">
+                    <div>
+                        <h4 style="text-align:center">Trabalho 1 de Redes 2 - UFPR</h4>
+                        <h4 style="text-align:center">Aplicação confiável sobre UDP</h4>
+                        <h4 style="text-align:right">Lennon Alberto dos Santos</h4>
+                        <h4 style="text-align:right">Leonardo Wistuba de França</h4>
+                        <h2 style="text-align:center">Relatório</h2>
+                    </div>
+                    <div id="content">
+                        <p>
+                            Todo este trabalho está disponível no <a href="https://github.com/leonardowf/redes2">github</a>, é interessante passear pelos commits para descobrir o andamento.
+                        </p>
+
+                        <div id="estrutura">
+
+                            <h4>Estrutura</h4>
+
+                            <p>
+                                Código fonte em Python, previsto para a versão 2.7.
+                            </p>
+                            <ul>
+                                <li>
+                                    application.py:
+                                    <ul>
+                                        <li>
+                                            Executável contendo a interface para o usuário, instanciação de Cliente, Servidor e Loggers.
+                                    </ul>
+                                </li>
+                                </li>
+                                <li>
+                                    client.py:
+                                    <ul>
+                                        <li>
+                                            Definição da classe Client, responsável por enviar dados para um servidor.
+                                    </ul>
+                                </li>
+                                </li>
+                                <li>
+                                    server.py:
+                                    <ul>
+                                        <li>
+                                            Definição da classe Server, responsável por receber dados e tratá-los.
+                                    </ul>
+                                </li>
+                                </li>
+                                <li>
+                                    packet.py:
+                                    <ul>
+                                        <li>
+                                            Definição da classe Packet, responsável pela organização dos pacotes.
+                                    </ul>
+                                </li>
+                                </li>
+                                <li>
+                                    logger.py:
+                                    <ul>
+                                        <li>
+                                            Definição da classe Logger, responsável por exibir logs ao usuário.
+                                    </ul>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="implementacao">
+                            <h4>Implementação</h4>
+                            <p>
+                                Como cada artefato foi produzido.
+                            </p>
+                            <ul>
+                                <li>
+                                    client.py
+                                    <ul>
+                                        <li>
+                                            O que o client.c faz é receber
+                                            data
+                                            pelo método
+                                            send(data)
+                                            , quebrando essa
+                                            data
+                                            de acordo com a quantidade limite configurado para cada pacote (padrão 1 byte), sorteando com a probabilidade especificada se deve perder ou duplicar cada pacote.
+                                            Caso haja uma perda, pula um pacote na lista de pacotes.
+                                            Caso haja uma duplicação, envia duas vezes o mesmo pacote.
+                                            A cada chamada de
+                                            send
+                                            um novo pedido de transmissão é feito ao servidor contendo o primeiro número de sequência gerado aleatoriamente.
+                                            Ao terminar todos os pacotes, uma mensagem com número de sequencia = -1 é enviada.
+                                    </ul>
+                                </li>
+                                </li>
+                                <li>
+                                    server.py
+                                    <ul>
+                                        <li>
+                                            O server aguarda até receber uma mensagem do tipo de início de transmissão.
+                                            Ao receber esse pedido, monta uma lista de pacotes, guarda o número de sequência esperado e aguarda novas transmissões.
+                                            Quando receber um pacote, analisa se o número de sequência é igual ao esperado, caso seja, envia um
+                                            ACK
+                                            para o cliente.
+                                            Caso o número de sequência não seja igual ao esperado, verifica se já possui o pacote em questão. Se já possuir, simplesmente ignora.
+                                            Caso não possua, envia um
+                                            NACK
+                                            , com o número de sequencia perdido.
+                                            Quando recebe um número de sequência = -1, limpa as variáveis de instância e aguarda novo pedido.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    packet.py
+                                    <ul>
+                                        <li>
+                                            Gera um pacote “binário” usando
+                                            struct.pack
+                                            .
+                                            Gera um pacote “Packet” usando
+                                            struct.unpack
+                                            Essa classe precisa ser refatorada, fica para uma próxima versão...
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    logger.py
+                                    <ul>
+                                        <li>
+                                            Client e Server possuem um conjunto de
+                                            loggers
+                                            que são objetos responsáveis por exibir os logs.
+                                            Um logger pode ser
+                                            LoggerFile
+                                            imprime em arquivo,
+                                            Logger
+                                            imprime em stdout e
+                                            LoggerHTML
+                                            gera um HTML bem formatado com a mensagens (não terminamos)
+                                            Um logger é um “observer”.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    application.py
+                                    <ul>
+                                        <li>
+                                            Instancia o cliente, servidor, loggers, atribuindo os IPS e portas de acordo com a entrada do usuário.
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div id="uso">
+                            <h4>Uso</h4>
+                            <p>
+                                O trabalho é executado com $ python application.py
+                            </p>
+
+                            <p>
+                                <b>Criando um cliente:</b></br>
+                                import client</br>
+                                um_cliente = client.Client(IP_do_server, porta_do_server)</br>
+                                um_cliente.send(“ALGUMA COISA”)</br>
+                            </p>
+
+                            <p>
+                                <b>Criando um servidor e aguardando pacotes:</b></br>
+                                import server</br>
+                                um_servidor = server.Server(IP_do_server, porta_do_server)</br>
+                                um_servidor.listen()</br>
+                            </p>
+                            <p>
+                                <b>Criando um pacote:</b></br>
+                                import packet</br>
+                                um_pacote = packet.Packet(“DATA”, número_sequencia)</br>
+                                Gerando binário</br>
+                                raw = um_pacote.pack()</br>
+                                Gerando pacote</br>
+                                um_pacote = um_pacote.unpack(raw)</br>
+                            </p>
+                            <p>
+                                <b>Criando um Logger:</b></br>
+                                import logger</br>
+                                um_logger = logger.LoggerFile(“arquivo.txt”)</br>
+                                Adicionando esse logger</br>
+                                um_cliente.add_logger(um_logger)</br>
+                                Imprimindo mensagens</br>
+                                um_cliente.log(“Mensagem”) ou um_cliente.notify_all(“mensagem”)</br>
+                            </p>
+
+                        </div>
+                        <div id="detalhes">
+                            <h4>Detalhes</h4>
+                            Inicialmente, pensamos em fazer o controle de fluxo com Janelas deslizantes. Abortamos essa ideia porque a complexidade aumentou demais.</br>
+                            Também começamos simulando a perda de pacotes e duplicação no lado do servidor. Mais tarde alteramos essa abordagem para ser realizada no cliente.</br>
+                            Não fazemos detecção de erros, assume-se que os pacotes chegam com sucesso sempre.</br>
+                            Cada transmissão exige a instanciação de um novo objeto cliente.</br>
+                            Todo o trabalho foi desenvolvido usando o IP 127.0.0.1, estava tudo hard-coded. Enfrentamos alguns problemas até percebermos que estávamos tentando fazer bind com o IP errado, for a isso, alguns problemas com identação...</br>
+                            Consideramos a proposta e especificação de trabalho muito boas, foram de grande valia para nós. Aprendemos sobre cliente/servidor UDP e aproveitamos a oportunidade para descobrir Python!</br>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <footer>
+                    <p>
+                        Leonardo Wistuba de França
+                    </p>
+                </footer>
+
+            </div>
+            <!-- /container -->
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script>
+                window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
+            </script>
+
+            <script src="js/vendor/bootstrap.min.js"></script>
+
+            <script src="js/main.js"></script>
+
+            <script>
+                var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+                ( function(d, t) {
+                        var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                        g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+                        s.parentNode.insertBefore(g, s)
+                    }(document, 'script'));
+            </script>
+    </body>
+</html>

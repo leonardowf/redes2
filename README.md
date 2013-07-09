@@ -5,8 +5,8 @@ Trabalho de Redes 2 (UDP)
 
 TODO LIST:
 - Criar interface		[x]
-- Criar logger			[]
-- Criar cliente			[]
-- Criar servidor		[]
-- Criar página web		[]
+- Criar logger			[x]
+- Criar cliente			[x]
+- Criar servidor		[x]
+- Criar página web		[x]
 

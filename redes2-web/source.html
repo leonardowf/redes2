@@ -93,7 +93,8 @@
                     </p>
                     <h3>Cliente</h3>
                     <p>
-                        <pre><code># coding=UTF-8
+                        <pre><code>
+# coding=UTF-8
 
 from datetime import datetime
 import socket
@@ -110,6 +111,8 @@ class Client:
     duplicate_percentage = 20
     lose_packets_mode = True
     duplicate_packets_mode = True
+    default_receiving_port = 9002
+    
     
     def __init__(self, UDP_IP, UDP_port):
         self.UDP_IP = UDP_IP
@@ -117,7 +120,10 @@ class Client:
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.loggers = []
         
-        self.socket.bind((self.UDP_IP, 9002))
+        self.my_IP = socket.gethostbyname(socket.gethostname())
+        
+        self.socket.bind((self.my_IP, self.default_receiving_port))
+        #porta para ouvir
     
     def add_logger(self, logger):
         self.loggers.append(logger)
@@ -280,15 +286,12 @@ class Client:
         if self.seq_num == self.limit_seq_num:
             self.seq_num = 0
             
-        
-    
 
-        
-        
 </code></pre>
 </p>                    <h3>Servidor</h3>
                     <p>
-                        <pre><code># coding=UTF-8
+                        <pre><code>
+# coding=UTF-8
 
 import socket
 import packet
@@ -322,7 +325,10 @@ class Server:
     def listen(self):
         while True:
             data, addr = self.socket.recvfrom(1024) # buffer size is 1024 bytes
-            # print "received message:", data + "with addr: ", addr
+            msg = "O IP do cliente e %s na porta: %s" % (str(addr[0]), str(addr[1]))
+            self.notify_all(msg)
+            self.client_IP = str(addr[0])
+            self.client_port = int(addr[1])
             a_packet = packet.Packet("", 0)
             a_packet.unpack(data)
             
@@ -350,7 +356,7 @@ class Server:
             a_packet = packet.Packet("", 0)
             a_packet.unpack(data)
             
-            msg = "Pacote esperado: <%d> Pacote Recebido <%d>" % (self.expected_sequence_number, a_packet.sequence_number)
+            msg = "Pacote esperado: <%d> Pacote Recebido <%d> com data: <%s>" % (self.expected_sequence_number, a_packet.sequence_number, a_packet.data)
             self.notify_all(msg)
             
             if (a_packet.sequence_number == self.expected_sequence_number):
@@ -405,26 +411,12 @@ class Server:
         self.expected_sequence_number = self.expected_sequence_number + 1
         if self.expected_sequence_number == self.limit_seq_num:
             self.expected_sequence_number = 0
-        
-        
-        
-        
-        
-        
-                
-            
-            
-            
-            
-        
-        
-        
-        
 
 </code></pre>
 </p>                    <h3>Application</h3>
                     <p>
-                        <pre><code># coding=UTF-8
+                        <pre><code>
+# coding=UTF-8
 
 import client
 import logger
@@ -459,31 +451,31 @@ def start_client_mode():
 #     print "PORT"
 #     UDP_port = raw_input()
     
-    connection_info = {'IP': "", 'port': ""}
+    print "Digite o ip do servidor"
+    server_IP = raw_input()
     
-    complete_with_default(connection_info)
-    
-    print connection_info['IP']
-    
-    if not valid_IP(connection_info['IP']):
+    print "Digite a porta do servidor"
+    server_port = raw_input()
+        
+    if not valid_IP(server_IP):
         print "IP inválida."
-        start_client_mode()
-        return
-    if not valid_port(connection_info['port']):
-        print "Porta inválida."
         start_client_mode()
         return
     
     # c_client = client.Client(connection_info['IP'], int(connection_info['port']))
     a_logger = logger.Logger()
     a_logger_file = logger.LoggerFile("log_cliente.txt")
+    
     print "Perder mensagens com % (exemplo: 20)"
     lost_percent = int(raw_input())
+    
     print "Duplicar mensagens com % (exemplo: 20)"
     duplicate_percent = int(raw_input())
+    
     while True:
+        print ">",
         message = raw_input()
-        c_client = client.Client(connection_info['IP'], int(connection_info['port']))
+        c_client = client.Client(server_IP, int(server_port))
         c_client.lost_percentage = lost_percent
         c_client.duplicate_percentage = duplicate_percent
         c_client.add_logger(a_logger)
@@ -491,7 +483,11 @@ def start_client_mode():
         c_client.send(message)
         
 def start_server_mode():
-    s_server = server.Server("127.0.0.1", 9001)
+    server_IP = socket.gethostbyname(socket.gethostname())
+    print server_IP
+    print "Digite a porta do server"
+    server_port = raw_input()
+    s_server = server.Server(server_IP, int(server_port))
     a_logger = logger.Logger()
     a_logger_file = logger.LoggerFile("log_servidor.txt")
     s_server.add_logger(a_logger)
@@ -505,53 +501,15 @@ def valid_IP(IP):
         return True
     except socket.error:
         return False
-
-def valid_port(port):
-    # TODO
-    return True
-
-def complete_with_default(connection_info):
-    default_IP = "127.0.0.1"
-    default_port = "9001"
-    
-    if connection_info['IP'].__len__() < 7:
-        connection_info['IP'] = default_IP
-        connection_info['port'] = default_port
         
 interface_choose_mode()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </code></pre>
-</p>                    <h3>Packet</h3>
+</p>
+                    <h3>Packet</h3>
                     <p>
-                        <pre><code># coding=UTF-8
+                        <pre><code>
+# coding=UTF-8
 
 from collections import namedtuple
 from struct import *
@@ -635,10 +593,12 @@ class Packet:
             return True
         else:
             return False
+
             </code></pre>
 </p>                    <h3>Logger</h3>
                     <p>
-                        <pre><code># coding=UTF-8
+                        <pre><code>
+# coding=UTF-8
 
 import os
 
@@ -682,6 +642,8 @@ class LoggerFile(Logger):
         a_message = "<#%d>" % self.count + "\t" + "<%s>" % time + "\t" + message + "\n"
         self.file_descriptor.write(a_message)
         self.count = self.count + 1
+
+
 </code></pre>
 </p>                </div>
             </div>
@@ -690,7 +652,8 @@ class LoggerFile(Logger):
 
             <footer>
                 <p>
-                    Leonardo Wistuba de França
+                    Leonardo Wistuba de França<br>
+                    Lennon Alberto dos Santos
                 </p>
             </footer>
 

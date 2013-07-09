@@ -32,7 +32,10 @@ class Server:
     def listen(self):
         while True:
             data, addr = self.socket.recvfrom(1024) # buffer size is 1024 bytes
-            # print "received message:", data + "with addr: ", addr
+            msg = "O IP do cliente e %s na porta: %s" % (str(addr[0]), str(addr[1]))
+            self.notify_all(msg)
+            self.client_IP = str(addr[0])
+            self.client_port = int(addr[1])
             a_packet = packet.Packet("", 0)
             a_packet.unpack(data)
             
@@ -60,7 +63,7 @@ class Server:
             a_packet = packet.Packet("", 0)
             a_packet.unpack(data)
             
-            msg = "Pacote esperado: <%d> Pacote Recebido <%d>" % (self.expected_sequence_number, a_packet.sequence_number)
+            msg = "Pacote esperado: <%d> Pacote Recebido <%d> com data: <%s>" % (self.expected_sequence_number, a_packet.sequence_number, a_packet.data)
             self.notify_all(msg)
             
             if (a_packet.sequence_number == self.expected_sequence_number):
